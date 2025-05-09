@@ -1,0 +1,40 @@
+{
+  "nodes": {
+    "map#1": {
+      "rfNode": {
+        "position": {
+          "x": 605.1773350552988,
+          "y": -227.68897395947818
+        }
+      }
+    },
+    "+javascript#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 46.60055422371076,
+          "y": -227.68897395947818
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+javascript#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1106.9889737532249,
+          "y": -227.68897395947818
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  }
+}

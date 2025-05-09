@@ -1,0 +1,169 @@
+inputs_def:
+  - handle: array
+    json_schema:
+      type: array
+outputs_def:
+  - handle: array
+    json_schema:
+      type: array
+nodes:
+  - node_id: +slot#1
+    node_type: slot_node
+    title: "Filter Item #1"
+    inputs_from:
+      - handle: item
+        from_node:
+          - node_id: +javascript#2
+            output_handle: item
+    slot:
+      inputs_def:
+        - handle: item
+          json_schema:
+            {}
+      outputs_def:
+        - handle: predicate
+          json_schema:
+            type: boolean
+  - node_id: +javascript#2
+    node_type: task_node
+    title: "forEach #1"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: array
+        from_flow:
+          - input_handle: array
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: array
+          description: Input
+          json_schema:
+            {}
+      outputs_def:
+        - handle: item
+          description: Output
+          json_schema:
+            {}
+        - handle: index
+          json_schema:
+            type: integer
+        - handle: length
+          json_schema:
+            type: integer
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#2.js
+          spawn: false
+  - node_id: +javascript#4
+    node_type: task_node
+    title: "Reducer #1"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: index
+        from_node:
+          - node_id: +javascript#2
+            output_handle: index
+      - handle: predicate
+        from_node:
+          - node_id: +slot#1
+            output_handle: predicate
+      - handle: length
+        from_node:
+          - node_id: +javascript#2
+            output_handle: length
+      - handle: reducer
+        from_node:
+          - node_id: +javascript#5
+            output_handle: reducer
+          - node_id: +javascript#4
+            output_handle: reducer
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: reducer
+          json_schema:
+            type: array
+          nullable: false
+        - handle: predicate
+          json_schema:
+            {}
+        - handle: index
+          description: Input
+          json_schema:
+            type: integer
+        - handle: length
+          json_schema:
+            type: integer
+          nullable: false
+      outputs_def:
+        - handle: predicates
+          description: Output
+          json_schema:
+            type: array
+        - handle: reducer
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#4.js
+          spawn: false
+  - node_id: +javascript#5
+    node_type: task_node
+    title: "Reducer Init #1"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: reducer
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#5.js
+          spawn: false
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: array
+          description: Input
+          json_schema:
+            type: array
+        - handle: predicates
+          json_schema:
+            type: array
+      outputs_def:
+        - handle: array
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.js
+    title: Filter
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#6
+    inputs_from:
+      - handle: predicates
+        from_node:
+          - node_id: +javascript#4
+            output_handle: predicates
+      - handle: array
+        from_flow:
+          - input_handle: array
+title: Filter
+outputs_from:
+  - handle: array
+    from_node:
+      - node_id: +javascript#6
+        output_handle: array

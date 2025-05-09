@@ -1,0 +1,90 @@
+nodes:
+  - subflow: self::map
+    node_id: map#1
+    inputs_from:
+      - handle: array
+        from_node:
+          - node_id: +javascript#1
+            output_handle: output
+    slots:
+      - slot_node_id: +slot#2
+        nodes:
+          - task:
+              ui:
+                default_width: 450
+              inputs_def:
+                - handle: input
+                  description: Input
+                  json_schema:
+                    type: string
+              outputs_def:
+                - handle: output
+                  description: Output
+                  json_schema:
+                    type: string
+              executor:
+                name: nodejs
+                options:
+                  entry: scriptlets/+javascript#3.js
+                  spawn: false
+            title: add1
+            icon: ":skill-icons:javascript:"
+            node_id: +javascript#1
+            inputs_from:
+              - handle: input
+                from_flow:
+                  - input_handle: item
+        outputs_from:
+          - handle: item
+            from_node:
+              - node_id: +javascript#1
+                output_handle: output
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: string
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#1.js
+    title: data
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#1
+    inputs_from:
+      - handle: input
+        value: ""
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: array
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#2.js
+    title: output
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#2
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: map#1
+            output_handle: array
+title: Map Example

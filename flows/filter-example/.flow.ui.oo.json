@@ -1,0 +1,43 @@
+{
+  "nodes": {
+    "filter#1": {
+      "rfNode": {
+        "position": {
+          "x": 135,
+          "y": -12
+        }
+      }
+    },
+    "+javascript#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 645,
+          "y": 15
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "data": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -378,
+          "y": -12
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        },
+        "preview": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  }
+}

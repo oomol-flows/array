@@ -1,0 +1,86 @@
+nodes:
+  - subflow: self::filter
+    title: "Filter #1"
+    node_id: filter#1
+    inputs_from:
+      - handle: array
+        from_node:
+          - node_id: data
+            output_handle: output
+    slots:
+      - slot_node_id: +slot#1
+        nodes:
+          - task:
+              ui:
+                default_width: 450
+              inputs_def:
+                - handle: item
+                  description: Input
+                  json_schema:
+                    {}
+              outputs_def:
+                - handle: predicate
+                  description: Output
+                  json_schema:
+                    type: boolean
+              executor:
+                name: nodejs
+                options:
+                  entry: scriptlets/+scriptlet#3.js
+            title: "JavaScript #1"
+            icon: ":skill-icons:javascript:"
+            node_id: +javascript#1
+            inputs_from:
+              - handle: item
+                from_flow:
+                  - input_handle: item
+        outputs_from:
+          - handle: predicate
+            from_node:
+              - node_id: +javascript#1
+                output_handle: output
+              - node_id: +javascript#1
+                output_handle: predicate
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: array
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#2.js
+    title: output
+    icon: ":skill-icons:javascript:"
+    node_id: +javascript#2
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: filter#1
+            output_handle: array
+  - task:
+      ui:
+        default_width: 450
+      inputs_def:
+        []
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.js
+    title: data
+    icon: ":skill-icons:javascript:"
+    node_id: data
+title: Filter Example

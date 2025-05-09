@@ -1,0 +1,113 @@
+{
+  "nodes": {
+    "+slot#1": {
+      "contentWidth": 350,
+      "rfNode": {
+        "position": {
+          "x": 905.0205630904177,
+          "y": -519.5560632861832
+        }
+      }
+    },
+    "+javascript#2": {
+      "contentWidth": 350,
+      "rfNode": {
+        "position": {
+          "x": 480.4914345322936,
+          "y": -469.5560632861832
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+javascript#4": {
+      "contentWidth": 350,
+      "rfNode": {
+        "position": {
+          "x": 1333.875,
+          "y": -392
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "reducer": {
+              "[]": false,
+              "[\"mark\"]": true,
+              "[\"array\"]": true
+            }
+          }
+        },
+        "outputs": {
+          "collapsed": {
+            "reducer": {
+              "[]": true
+            }
+          }
+        },
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+javascript#5": {
+      "contentWidth": 350,
+      "rfNode": {
+        "position": {
+          "x": 869.3955630904177,
+          "y": -786.4310632861832
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "+javascript#6": {
+      "contentWidth": 350,
+      "rfNode": {
+        "position": {
+          "x": 1801,
+          "y": -535.875
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "array": {
+              "[]": true
+            },
+            "predicates": {
+              "[]": true
+            }
+          }
+        },
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": -4.102152121758081,
+          "y": -469.5560632861832
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 2254.107556996718,
+          "y": -454.9671940515263
+        }
+      }
+    }
+  }
+}
