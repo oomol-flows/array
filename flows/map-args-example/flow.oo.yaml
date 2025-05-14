@@ -1,0 +1,120 @@
+nodes:
+  - task: self::iter_args
+    title: "Iter Args #1"
+    node_id: iter_args#1
+    inputs_from:
+      - handle: prefix
+        value: "prefix"
+      - handle: suffix
+        value: suffix
+    inputs_def:
+      - handle: prefix
+        json_schema:
+          type: string
+      - handle: suffix
+        json_schema:
+          type: string
+  - node_id: +javascript#1
+    node_type: task_node
+    title: "data #1"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: input
+        value: ""
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: string
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#1.js
+          spawn: false
+  - subflow: self::map
+    title: "Map #1"
+    node_id: map#1
+    inputs_from:
+      - handle: array
+        from_node:
+          - node_id: +javascript#1
+            output_handle: output
+      - handle: args
+        from_node:
+          - node_id: iter_args#1
+            output_handle: args
+    slots:
+      - slot_node_id: +slot#2
+        nodes:
+          - task:
+              ui:
+                default_width: 450
+              inputs_def:
+                - handle: item
+                  description: Input
+                  json_schema:
+                    type: string
+                - handle: args
+                  json_schema:
+                    type: object
+                    additionalProperties: false
+              outputs_def:
+                - handle: output
+                  description: Output
+                  json_schema:
+                    type: string
+              executor:
+                name: nodejs
+                options:
+                  entry: scriptlets/+scriptlet#1.js
+            title: transform
+            icon: ":skill-icons:javascript:"
+            node_id: +javascript#1
+            inputs_from:
+              - handle: item
+                from_flow:
+                  - input_handle: item
+              - handle: args
+                from_flow:
+                  - input_handle: args
+        outputs_from:
+          - handle: item
+            from_node:
+              - node_id: +javascript#1
+                output_handle: output
+  - node_id: +javascript#2
+    node_type: task_node
+    title: "output #1"
+    icon: ":skill-icons:javascript:"
+    inputs_from:
+      - handle: input
+        from_node:
+          - node_id: map#1
+            output_handle: array
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          description: Input
+          json_schema:
+            type: array
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            type: array
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+javascript#2.js
+          spawn: false
+title: Map With Args Example

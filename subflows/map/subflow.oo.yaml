@@ -4,6 +4,11 @@ inputs_def:
       type: array
       items:
         {}
+  - handle: args
+    json_schema:
+      {}
+    nullable: false
+    description: Args for each iteration
 outputs_def:
   - handle: array
     json_schema:
@@ -14,6 +19,12 @@ nodes:
         - handle: item
           json_schema:
             {}
+        - handle: args
+          json_schema:
+            {}
+        - handle: index
+          json_schema:
+            type: integer
       outputs_def:
         - handle: item
           json_schema:
@@ -25,6 +36,14 @@ nodes:
         from_node:
           - node_id: +javascript#3
             output_handle: item
+      - handle: args
+        from_node:
+          - node_id: +javascript#3
+            output_handle: args
+      - handle: index
+        from_node:
+          - node_id: +javascript#3
+            output_handle: index
   - task:
       ui:
         default_width: 450
@@ -103,9 +122,15 @@ nodes:
           description: Input
           json_schema:
             {}
+        - handle: args
+          json_schema:
+            {}
       outputs_def:
         - handle: item
           description: Output
+          json_schema:
+            {}
+        - handle: args
           json_schema:
             {}
         - handle: index
@@ -125,6 +150,10 @@ nodes:
       - handle: array
         from_flow:
           - input_handle: array
+      - handle: args
+        from_flow:
+          - input_handle: extra
+          - input_handle: args
   - task:
       ui:
         default_width: 450

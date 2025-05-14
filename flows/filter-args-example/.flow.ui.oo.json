@@ -1,0 +1,49 @@
+{
+  "nodes": {
+    "+javascript#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -470,
+          "y": -167
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "filter#1": {
+      "rfNode": {
+        "position": {
+          "x": 120,
+          "y": -61
+        }
+      }
+    },
+    "iter_args#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -470,
+          "y": 180
+        }
+      }
+    },
+    "+javascript#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 690,
+          "y": -31.5
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  }
+}

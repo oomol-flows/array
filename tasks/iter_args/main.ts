@@ -1,0 +1,16 @@
+import type { Context } from "@oomol/types/oocana";
+
+//#region generated meta
+type Inputs = {
+};
+type Outputs = {
+    args: Record<string, any>;
+};
+//#endregion
+
+export default async function(
+    params: Inputs,
+    context: Context<Inputs, Outputs>
+): Promise<Outputs> {
+    return { args: params };
+};

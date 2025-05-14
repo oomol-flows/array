@@ -6,6 +6,7 @@ nodes:
         from_node:
           - node_id: +javascript#1
             output_handle: output
+      - handle: args
     slots:
       - slot_node_id: +slot#2
         nodes:

@@ -16,6 +16,7 @@ export default async function (params, context) {
             await context.output("item", params.array[i]);
             await context.output("index", i);
             await context.output("length", params.array.length);
+            await context.output("args", params.args);
         }
     }
 }
