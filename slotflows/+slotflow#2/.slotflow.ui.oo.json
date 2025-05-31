@@ -1,0 +1,31 @@
+{
+  "nodes": {
+    "+javascript#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 501.4236842105264,
+          "y": -566.891447368421
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": -400
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 1024.4315789473685,
+          "y": -409.3513157894737
+        }
+      }
+    }
+  }
+}

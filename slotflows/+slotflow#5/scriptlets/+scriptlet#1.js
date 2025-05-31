@@ -1,12 +1,8 @@
 //#region generated meta
 /**
- * @import { Context } from "@oomol/types/oocana";
- * @typedef {{
- *   input: string;
- * }} Inputs;
- * @typedef {{
- *   output: any[];
- * }} Outputs;
+ * @import { Context } from "@oomol/types/oocana"
+ * @typedef {{item: any, args: any}} Inputs
+ * @typedef {{output: any}} Outputs
  */
 //#endregion
 
@@ -19,5 +15,5 @@ export default async function (params, context) {
 
     // your code
 
-    return { output: [1,2,3] };
+    return { output: `${params.args?.prefix || ''}${params.item}${params.args?.suffix || ''}` };
 }

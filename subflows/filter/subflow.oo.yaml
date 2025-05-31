@@ -5,6 +5,8 @@ inputs_def:
   - handle: args
     json_schema:
       {}
+    value:
+    nullable: true
 outputs_def:
   - handle: array
     json_schema:

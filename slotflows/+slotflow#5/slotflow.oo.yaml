@@ -1,0 +1,36 @@
+nodes:
+  - node_id: +javascript#1
+    title: "JavaScript #1"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: item
+          description: Input
+          json_schema:
+            {}
+        - handle: args
+          json_schema:
+            {}
+      outputs_def:
+        - handle: output
+          description: Output
+          json_schema:
+            {}
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.js
+    inputs_from:
+      - handle: item
+        from_flow:
+          - input_handle: item
+      - handle: args
+        from_flow:
+          - input_handle: args
+outputs_from:
+  - handle: item
+    from_node:
+      - node_id: +javascript#1
+        output_handle: output

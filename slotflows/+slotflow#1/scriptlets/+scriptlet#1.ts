@@ -1,17 +1,20 @@
-import type { Context } from "@oomol/types/oocana";
-
 //#region generated meta
 import type { Context } from "@oomol/types/oocana";
 type Inputs = {
-};
+    item: any;
+    args: any
+}
 type Outputs = {
-    args: Record<string, any>;
-};
+    output: any;
+}
 //#endregion
 
 export default async function(
     params: Inputs,
     context: Context<Inputs, Outputs>
-): Promise<Outputs> {
-    return { args: params };
+): Promise<Partial<Outputs> | undefined | void> {
+
+    // your code
+
+    return { output: params.item >= params.args.min && params.item <= params.args.max };
 };

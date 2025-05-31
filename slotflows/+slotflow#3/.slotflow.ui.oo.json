@@ -1,0 +1,20 @@
+{
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": -400
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 800,
+          "y": -400
+        }
+      }
+    }
+  }
+}

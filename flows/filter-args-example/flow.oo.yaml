@@ -38,42 +38,7 @@ nodes:
             output_handle: args
     slots:
       - slot_node_id: +slot#1
-        nodes:
-          - task:
-              ui:
-                default_width: 450
-              inputs_def:
-                - handle: item
-                  description: Input
-                  json_schema:
-                    type: string
-                - handle: args
-                  json_schema:
-                    {}
-              outputs_def:
-                - handle: output
-                  description: Output
-                  json_schema:
-                    type: boolean
-              executor:
-                name: nodejs
-                options:
-                  entry: scriptlets/+scriptlet#1.js
-            title: "JavaScript #1"
-            icon: ":skill-icons:javascript:"
-            node_id: +javascript#1
-            inputs_from:
-              - handle: item
-                from_flow:
-                  - input_handle: item
-              - handle: args
-                from_flow:
-                  - input_handle: args
-        outputs_from:
-          - handle: predicate
-            from_node:
-              - node_id: +javascript#1
-                output_handle: output
+        slotflow: self::+slotflow#1
   - task: self::iter_args
     title: "Iter Args #1"
     node_id: iter_args#1

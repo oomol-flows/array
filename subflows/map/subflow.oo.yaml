@@ -5,10 +5,11 @@ inputs_def:
       items:
         {}
   - handle: args
+    description: Args for each iteration
     json_schema:
       {}
-    nullable: false
-    description: Args for each iteration
+    value:
+    nullable: true
 outputs_def:
   - handle: array
     json_schema:

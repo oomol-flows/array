@@ -7,40 +7,14 @@ nodes:
         from_node:
           - node_id: data
             output_handle: output
+      - handle: args
+        schema_overrides:
+          - schema:
+              type: "null"
+        value:
     slots:
       - slot_node_id: +slot#1
-        nodes:
-          - task:
-              ui:
-                default_width: 450
-              inputs_def:
-                - handle: item
-                  description: Input
-                  json_schema:
-                    {}
-              outputs_def:
-                - handle: predicate
-                  description: Output
-                  json_schema:
-                    type: boolean
-              executor:
-                name: nodejs
-                options:
-                  entry: scriptlets/+scriptlet#3.js
-            title: "JavaScript #1"
-            icon: ":skill-icons:javascript:"
-            node_id: +javascript#1
-            inputs_from:
-              - handle: item
-                from_flow:
-                  - input_handle: item
-        outputs_from:
-          - handle: predicate
-            from_node:
-              - node_id: +javascript#1
-                output_handle: output
-              - node_id: +javascript#1
-                output_handle: predicate
+        slotflow: self::+slotflow#2
   - task:
       ui:
         default_width: 450
