@@ -1,12 +1,11 @@
 //#region generated meta
-import type { Context } from "@oomol/types/oocana";
 type Inputs = {
     item: any;
-    args: any
-}
+    args: any;
+};
 type Outputs = {
     output: any;
-}
+};
 //#endregion
 
 export default async function(

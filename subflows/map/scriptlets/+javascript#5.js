@@ -1,13 +1,17 @@
 //#region generated meta
 /**
- * @typedef {{input: any}} Inputs
- * @typedef {{output: any}} Outputs
+ * @typedef {{
+ * }} Inputs;
+ * @typedef {{
+ *   reducer: { mark: any[]; array: any[] };
+ * }} Outputs;
  */
 //#endregion
 
 /**
+ * @import { Context } from "@oomol/types/oocana";
  * @param {Inputs} params
- * @param {import("@oomol/types/oocana").Context<Inputs, Outputs>} context
+ * @param {Context<Inputs, Outputs>} context
  * @returns {Promise<Outputs>}
  */
 export default async function (params, context) {

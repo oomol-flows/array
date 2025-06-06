@@ -1,6 +1,5 @@
 //#region generated meta
 /**
- * @import { Context } from "@oomol/types/oocana";
  * @typedef {{
  *   input: string;
  * }} Inputs;
@@ -11,6 +10,7 @@
 //#endregion
 
 /**
+ * @import { Context } from "@oomol/types/oocana";
  * @param {Inputs} params
  * @param {Context<Inputs, Outputs>} context
  * @returns {Promise<Outputs>}

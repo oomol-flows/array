@@ -6,6 +6,7 @@
 //#endregion
 
 /**
+ * @import { Context } from "@oomol/types/oocana";
  * @param {Inputs} params
  * @param {import("@oomol/types/oocana").Context<Inputs, Outputs>} context
  * @returns {Promise<Outputs>}

@@ -1,12 +1,17 @@
 //#region generated meta
 /**
- * @import { Context } from "@oomol/types/oocana"
- * @typedef {{item: any, args: any}} Inputs
- * @typedef {{output: any}} Outputs
+ * @typedef {{
+ *   item: any;
+ *   args: any;
+ * }} Inputs;
+ * @typedef {{
+ *   output: any;
+ * }} Outputs;
  */
 //#endregion
 
 /**
+ * @import { Context } from "@oomol/types/oocana";
  * @param {Inputs} params
  * @param {Context<Inputs, Outputs>} context
  * @returns {Promise<Outputs>}
