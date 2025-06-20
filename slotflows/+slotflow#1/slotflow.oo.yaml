@@ -10,9 +10,14 @@ nodes:
           description: Input
           json_schema:
             {}
-        - handle: args
+        - handle: min
           json_schema:
-            {}
+            type: number
+          nullable: true
+        - handle: max
+          json_schema:
+            type: number
+          nullable: true
       outputs_def:
         - handle: output
           description: Output
@@ -26,9 +31,14 @@ nodes:
       - handle: item
         from_flow:
           - input_handle: item
-      - handle: args
+      - handle: min
+        value:
         from_flow:
-          - input_handle: args
+          - input_handle: min
+      - handle: max
+        value:
+        from_flow:
+          - input_handle: max
 outputs_from:
   - handle: predicate
     from_node:

@@ -1,21 +1,23 @@
 //#region generated meta
 /**
  * @typedef {{
- *   array: any[];
- *   predicates: any[];
  * }} Inputs;
  * @typedef {{
- *   array: any[];
+ *   min: number;
+ *   max: number;
  * }} Outputs;
  */
 //#endregion
 
 /**
- * @import { Context } from "@oomol/types/oocana";
+ * @import { Context } from "@oomol/types/oocana"
  * @param {Inputs} params
  * @param {Context<Inputs, Outputs>} context
  * @returns {Promise<Outputs>}
  */
 export default async function (params, context) {
-    return { array: params.array?.filter((_, i) => params.predicates?.[i]) };
+
+    // your code
+
+    return { min: 2, max: 5 };
 }

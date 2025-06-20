@@ -1,13 +1,5 @@
 {
   "nodes": {
-    "iter_args#1": {
-      "rfNode": {
-        "position": {
-          "x": -415.70873765075703,
-          "y": 359.4306350560648
-        }
-      }
-    },
     "+javascript#1": {
       "contentWidth": 450,
       "rfNode": {
@@ -41,6 +33,15 @@
       "sections": {
         "scriptlet": {
           "cardCollapsed": true
+        }
+      }
+    },
+    "+value#1": {
+      "contentWidth": 415,
+      "rfNode": {
+        "position": {
+          "x": -466,
+          "y": 333
         }
       }
     }

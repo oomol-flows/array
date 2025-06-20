@@ -4,12 +4,6 @@ inputs_def:
       type: array
       items:
         {}
-  - handle: args
-    description: Args for each iteration
-    json_schema:
-      {}
-    value:
-    nullable: true
 outputs_def:
   - handle: array
     json_schema:
@@ -18,9 +12,6 @@ nodes:
   - slot:
       inputs_def:
         - handle: item
-          json_schema:
-            {}
-        - handle: args
           json_schema:
             {}
         - handle: index
@@ -37,10 +28,6 @@ nodes:
         from_node:
           - node_id: +javascript#3
             output_handle: item
-      - handle: args
-        from_node:
-          - node_id: +javascript#3
-            output_handle: args
       - handle: index
         from_node:
           - node_id: +javascript#3
@@ -123,15 +110,9 @@ nodes:
           description: Input
           json_schema:
             {}
-        - handle: args
-          json_schema:
-            {}
       outputs_def:
         - handle: item
           description: Output
-          json_schema:
-            {}
-        - handle: args
           json_schema:
             {}
         - handle: index
@@ -151,10 +132,6 @@ nodes:
       - handle: array
         from_flow:
           - input_handle: array
-      - handle: args
-        from_flow:
-          - input_handle: extra
-          - input_handle: args
   - task:
       ui:
         default_width: 450

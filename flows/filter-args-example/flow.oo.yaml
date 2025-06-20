@@ -1,7 +1,7 @@
 nodes:
   - node_id: +javascript#1
     node_type: task_node
-    title: "data #1"
+    title: "Array Data"
     icon: ":skill-icons:javascript:"
     inputs_from:
       - handle: input
@@ -32,28 +32,25 @@ nodes:
         from_node:
           - node_id: +javascript#1
             output_handle: output
-      - handle: args
-        from_node:
-          - node_id: iter_args#1
-            output_handle: args
     slots:
       - slot_node_id: +slot#1
         slotflow: self::+slotflow#1
-  - task: self::iter_args
-    title: "Iter Args #1"
-    node_id: iter_args#1
-    inputs_from:
-      - handle: max
-        value: 5
-      - handle: min
-        value: 2
-    inputs_def:
-      - handle: min
-        json_schema:
-          type: number
-      - handle: max
-        json_schema:
-          type: number
+        inputs_def:
+          - handle: min
+            json_schema:
+              type: number
+          - handle: max
+            json_schema:
+              type: number
+        inputs_from:
+          - handle: min
+            from_node:
+              - node_id: +value#2
+                output_handle: min
+          - handle: max
+            from_node:
+              - node_id: +value#2
+                output_handle: max
   - node_id: +javascript#2
     node_type: task_node
     title: "output #1"
@@ -81,4 +78,15 @@ nodes:
         options:
           entry: scriptlets/+javascript#2.js
           spawn: false
-title: Filter With Args Example
+  - node_id: +value#2
+    title: "Value #1"
+    values:
+      - handle: min
+        json_schema:
+          type: number
+        value: 2
+      - handle: max
+        json_schema:
+          type: number
+        value: 5
+title: Filter With Payload Example

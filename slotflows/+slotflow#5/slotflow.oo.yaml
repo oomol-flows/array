@@ -10,9 +10,14 @@ nodes:
           description: Input
           json_schema:
             {}
-        - handle: args
+        - handle: prefix
           json_schema:
-            {}
+            type: string
+          nullable: false
+        - handle: suffix
+          json_schema:
+            type: string
+          nullable: false
       outputs_def:
         - handle: output
           description: Output
@@ -26,9 +31,14 @@ nodes:
       - handle: item
         from_flow:
           - input_handle: item
-      - handle: args
+      - handle: prefix
+        value: ""
         from_flow:
-          - input_handle: args
+          - input_handle: prefix
+      - handle: suffix
+        value: ""
+        from_flow:
+          - input_handle: suffix
 outputs_from:
   - handle: item
     from_node:

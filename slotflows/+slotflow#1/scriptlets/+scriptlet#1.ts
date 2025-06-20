@@ -1,12 +1,15 @@
 //#region generated meta
 type Inputs = {
     item: any;
-    args: any;
+    min: number | null;
+    max: number | null;
 };
 type Outputs = {
     output: any;
 };
 //#endregion
+
+import type { Context } from "@oomol/types/oocana";
 
 export default async function(
     params: Inputs,
@@ -15,5 +18,5 @@ export default async function(
 
     // your code
 
-    return { output: params.item >= params.args.min && params.item <= params.args.max };
+    return { output: params.item >= (params.min ?? -Infinity) && params.item <= (params.max ?? Infinity) };
 };

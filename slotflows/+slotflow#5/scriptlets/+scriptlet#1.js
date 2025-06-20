@@ -2,7 +2,8 @@
 /**
  * @typedef {{
  *   item: any;
- *   args: any;
+ *   prefix: string;
+ *   suffix: string;
  * }} Inputs;
  * @typedef {{
  *   output: any;
@@ -20,5 +21,5 @@ export default async function (params, context) {
 
     // your code
 
-    return { output: `${params.args?.prefix || ''}${params.item}${params.args?.suffix || ''}` };
+    return { output: `${params.prefix || ''}${params.item}${params.suffix || ''}` };
 }
