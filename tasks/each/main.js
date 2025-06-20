@@ -1,7 +1,7 @@
 //#region generated meta
 /**
  * @typedef {{
- *   array: any;
+ *   array: any[];
  * }} Inputs;
  * @typedef {{
  *   item: any;
@@ -12,7 +12,7 @@
 //#endregion
 
 /**
- * @import { Context } from "@oomol/types/oocana";
+ * @import { Context } from "@oomol/types/oocana"
  * @param {Inputs} params
  * @param {Context<Inputs, Outputs>} context
  * @returns {Promise<Outputs>}

@@ -1,0 +1,24 @@
+title: Each Example
+nodes:
+  - node_id: each#5
+    title: "Each #5"
+    inputs_from:
+      - handle: array
+        value:
+          - 1
+          - 2
+          - 3
+        schema_overrides:
+          - path: 0
+            schema:
+              type: number
+          - path: 1
+            schema:
+              type: number
+          - path: 2
+            schema:
+              type: number
+      - handle: input1
+        value:
+          {}
+    task: self::each

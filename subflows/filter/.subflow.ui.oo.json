@@ -4,22 +4,8 @@
       "contentWidth": 350,
       "rfNode": {
         "position": {
-          "x": 1129.1633344216166,
-          "y": -353.1589117390744
-        }
-      }
-    },
-    "+javascript#2": {
-      "contentWidth": 358.9428320427511,
-      "rfNode": {
-        "position": {
-          "x": 619.3027435680276,
+          "x": 1101.898135742569,
           "y": -277.5564980743216
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
         }
       }
     },
@@ -53,26 +39,12 @@
         }
       }
     },
-    "+javascript#5": {
-      "contentWidth": 350,
-      "rfNode": {
-        "position": {
-          "x": 1129.1633344216166,
-          "y": -615.3517140353374
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
     "+javascript#6": {
       "contentWidth": 350,
       "rfNode": {
         "position": {
-          "x": 2007.093667322282,
-          "y": -258.54417877591095
+          "x": 1983.5897604978893,
+          "y": -391.1733672849845
         }
       },
       "sections": {
@@ -90,6 +62,32 @@
           "cardCollapsed": true
         }
       }
+    },
+    "each#1": {
+      "rfNode": {
+        "position": {
+          "x": 1080.0730794056326,
+          "y": -661.0082261387735
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "array": {
+              "[0]": false,
+              "[]": false
+            }
+          }
+        }
+      }
+    },
+    "each#2": {
+      "rfNode": {
+        "position": {
+          "x": 558.6816070540192,
+          "y": -214.33119516046833
+        }
+      }
     }
   },
   "pseudoNodes": {
@@ -104,8 +102,8 @@
     "output": {
       "rfNode": {
         "position": {
-          "x": 2472.772242961865,
-          "y": -214.33119516046833
+          "x": 2492.918448811344,
+          "y": -86.17336728498452
         }
       }
     }

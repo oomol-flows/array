@@ -13,11 +13,11 @@ nodes:
     inputs_from:
       - handle: item
         from_node:
-          - node_id: +javascript#2
+          - node_id: each#2
             output_handle: item
       - handle: index
         from_node:
-          - node_id: +javascript#2
+          - node_id: each#2
             output_handle: index
     slot:
       inputs_def:
@@ -31,38 +31,6 @@ nodes:
         - handle: predicate
           json_schema:
             type: boolean
-  - node_id: +javascript#2
-    node_type: task_node
-    title: "forEach #1"
-    icon: ":skill-icons:javascript:"
-    inputs_from:
-      - handle: array
-        from_flow:
-          - input_handle: array
-    task:
-      ui:
-        default_width: 450
-      inputs_def:
-        - handle: array
-          description: Input
-          json_schema:
-            {}
-      outputs_def:
-        - handle: item
-          description: Output
-          json_schema:
-            {}
-        - handle: index
-          json_schema:
-            type: integer
-        - handle: length
-          json_schema:
-            type: integer
-      executor:
-        name: nodejs
-        options:
-          entry: scriptlets/+javascript#2.js
-          spawn: false
   - node_id: +javascript#4
     node_type: task_node
     title: "Reducer #1"
@@ -70,7 +38,7 @@ nodes:
     inputs_from:
       - handle: index
         from_node:
-          - node_id: +javascript#2
+          - node_id: each#2
             output_handle: index
       - handle: predicate
         from_node:
@@ -78,14 +46,14 @@ nodes:
             output_handle: predicate
       - handle: length
         from_node:
-          - node_id: +javascript#2
+          - node_id: each#2
             output_handle: length
       - handle: reducer
         from_node:
-          - node_id: +javascript#5
-            output_handle: reducer
           - node_id: +javascript#4
             output_handle: reducer
+          - node_id: each#1
+            output_handle: item
     task:
       ui:
         default_width: 450
@@ -118,25 +86,6 @@ nodes:
         options:
           entry: scriptlets/+javascript#4.js
           spawn: false
-  - node_id: +javascript#5
-    node_type: task_node
-    title: "Reducer Init #1"
-    icon: ":skill-icons:javascript:"
-    task:
-      ui:
-        default_width: 450
-      inputs_def:
-        []
-      outputs_def:
-        - handle: reducer
-          description: Output
-          json_schema:
-            type: array
-      executor:
-        name: nodejs
-        options:
-          entry: scriptlets/+javascript#5.js
-          spawn: false
   - task:
       ui:
         default_width: 450
@@ -168,6 +117,25 @@ nodes:
       - handle: array
         from_flow:
           - input_handle: array
+  - node_id: each#1
+    node_type: task_node
+    title: "Reducer Init #1"
+    inputs_from:
+      - handle: array
+        value:
+          - []
+        schema_overrides:
+          - path: 0
+            schema:
+              type: array
+    task: self::each
+  - node_id: each#2
+    title: "Each #2"
+    inputs_from:
+      - handle: array
+        from_flow:
+          - input_handle: array
+    task: self::each
 title: Filter
 outputs_from:
   - handle: array

@@ -89,9 +89,9 @@ nodes:
       - handle: prefix
         json_schema:
           type: string
-        value: myprefix
+        value: myprefix-
       - handle: suffix
         json_schema:
           type: string
-        value: mysuffix
+        value: -mysuffix
 title: Map With Payload Example

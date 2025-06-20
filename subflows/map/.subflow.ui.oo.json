@@ -39,38 +39,28 @@
         }
       }
     },
-    "+javascript#3": {
-      "contentWidth": 605.0861066775212,
+    "each#1": {
       "rfNode": {
         "position": {
-          "x": 436.6402986970277,
-          "y": 179.8930146064572
-        }
-      },
-      "sections": {
-        "outputs": {
-          "collapsed": {
-            "args": {
-              "[]": true
-            }
-          }
-        },
-        "scriptlet": {
-          "cardCollapsed": true
+          "x": 540.1400183559163,
+          "y": 203.26963845433352
         }
       }
     },
-    "+javascript#5": {
-      "contentWidth": 350,
+    "each#3": {
       "rfNode": {
         "position": {
-          "x": 1159.9375818988517,
-          "y": -212.3771721587764
+          "x": 1116.0235533413597,
+          "y": -260.6417539696681
         }
       },
       "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
+        "inputs": {
+          "collapsed": {
+            "array": {
+              "[0]": true
+            }
+          }
         }
       }
     }

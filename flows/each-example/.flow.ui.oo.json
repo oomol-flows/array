@@ -1,0 +1,21 @@
+{
+  "nodes": {
+    "each#5": {
+      "rfNode": {
+        "position": {
+          "x": 789,
+          "y": 84.5
+        }
+      },
+      "sections": {
+        "inputs": {
+          "collapsed": {
+            "input1": {
+              "[]": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+executor:
+  name: nodejs
+  options:
+    entry: main.js
+inputs_def:
+  - handle: array
+    json_schema:
+      type: array
+outputs_def:
+  - handle: item
+    description: Each array item.
+    json_schema:
+      {}
+  - handle: index
+    json_schema:
+      type: integer
+    description: Item index.
+  - handle: length
+    json_schema:
+      type: integer
+    description: Array length.
+title: Each
+additional_inputs: false
+description: ""

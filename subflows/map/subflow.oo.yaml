@@ -26,11 +26,11 @@ nodes:
     inputs_from:
       - handle: item
         from_node:
-          - node_id: +javascript#3
+          - node_id: each#1
             output_handle: item
       - handle: index
         from_node:
-          - node_id: +javascript#3
+          - node_id: each#1
             output_handle: index
   - task:
       ui:
@@ -81,7 +81,7 @@ nodes:
     inputs_from:
       - handle: index
         from_node:
-          - node_id: +javascript#3
+          - node_id: each#1
             output_handle: index
       - handle: item
         from_node:
@@ -91,74 +91,50 @@ nodes:
         from_flow:
           []
         from_node:
-          - node_id: +javascript#3
+          - node_id: each#1
             output_handle: length
       - handle: reducer
         value:
           mark:
             []
         from_node:
-          - node_id: +javascript#5
-            output_handle: reducer
           - node_id: +javascript#1
             output_handle: reducer
-  - task:
-      ui:
-        default_width: 450
-      inputs_def:
-        - handle: array
-          description: Input
-          json_schema:
-            {}
-      outputs_def:
-        - handle: item
-          description: Output
-          json_schema:
-            {}
-        - handle: index
-          json_schema:
-            type: integer
-        - handle: length
-          json_schema:
-            type: integer
-      executor:
-        name: nodejs
-        options:
-          entry: scriptlets/+javascript#3.js
-    title: forEach
-    icon: ":skill-icons:javascript:"
-    node_id: +javascript#3
+          - node_id: each#3
+            output_handle: item
+  - node_id: each#1
+    title: "Each #1"
     inputs_from:
       - handle: array
         from_flow:
           - input_handle: array
-  - task:
-      ui:
-        default_width: 450
-      inputs_def:
-        []
-      outputs_def:
-        - handle: reducer
-          description: Output
-          json_schema:
-            type: object
-            additionalProperties: false
-            properties:
-              mark:
-                type: array
-              array:
-                type: array
-      executor:
-        name: nodejs
-        options:
-          entry: scriptlets/+javascript#5.js
-    title: Reducer Init
-    icon: ":skill-icons:javascript:"
-    node_id: +javascript#5
+    task: self::each
+  - node_id: each#3
+    title: "Reducer Init"
+    inputs_from:
+      - handle: array
+        value:
+          - mark:
+              []
+            array:
+              []
+        schema_overrides:
+          - path: 0
+            schema:
+              type: object
+              additionalProperties: false
+          - path:
+              - 0
+              - mark
+            schema:
+              type: array
+          - path:
+              - 0
+              - array
+            schema:
+              type: array
+    task: self::each
 outputs_from:
-  - handle: output
-    from_node:
-      []
   - handle: array
     from_node:
       - node_id: +javascript#1
