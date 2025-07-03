@@ -1,0 +1,37 @@
+title: Some Example
+nodes:
+  - node_id: some#1
+    title: "Some #1"
+    inputs_from:
+      - handle: array
+        value:
+          []
+        from_node:
+          - node_id: +value#1
+            output_handle: array
+    subflow: self::some
+    slots:
+      - slot_node_id: +slot#1
+        slotflow: self::+slotflow#6
+  - node_id: +value#1
+    title: "Value #1"
+    values:
+      - handle: array
+        json_schema:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              kind:
+                type: string
+              name:
+                type: string
+        nullable: false
+        value:
+          - kind: color
+            name: blue
+          - kind: animal
+            name: cat
+          - kind: color
+            name: red

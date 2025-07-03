@@ -1,23 +1,20 @@
 //#region generated meta
 /**
  * @typedef {{
- *   input: string;
+ *   input: any;
  * }} Inputs;
  * @typedef {{
- *   output: any[];
+ *   true: boolean;
  * }} Outputs;
  */
 //#endregion
 
 /**
- * @import { Context } from "@oomol/types/oocana";
+ * @import { Context } from "@oomol/types/oocana"
  * @param {Inputs} params
  * @param {Context<Inputs, Outputs>} context
- * @returns {Promise<Outputs>}
+ * @returns {Promise<Partial<Outputs> | undefined | void>}
  */
 export default async function (params, context) {
-
-    // your code
-
-    return { output: [1,2,3] };
+    return { "true": true };
 }

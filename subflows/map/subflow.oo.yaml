@@ -107,7 +107,10 @@ nodes:
     inputs_from:
       - handle: array
         from_flow:
-          - input_handle: array
+          []
+        from_node:
+          - node_id: switch-by-length#1
+            output_handle: ">0"
     task: self::each
   - node_id: each#3
     title: "Reducer Init"
@@ -134,9 +137,27 @@ nodes:
             schema:
               type: array
     task: self::each
+  - node_id: switch-by-length#1
+    title: "SwitchByLength #1"
+    inputs_from:
+      - handle: array
+        value:
+          - null
+        from_flow:
+          - input_handle: array
+    task: self::switch-by-length
+    outputs_def:
+      - handle: ">0"
+        json_schema:
+          type: array
+      - handle: "0"
+        json_schema:
+          type: array
 outputs_from:
   - handle: array
     from_node:
       - node_id: +javascript#1
         output_handle: array
+      - node_id: switch-by-length#1
+        output_handle: "0"
 title: Map

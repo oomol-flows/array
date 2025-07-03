@@ -1,19 +1,5 @@
 {
   "nodes": {
-    "+javascript#1": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": -466,
-          "y": 0
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
     "map#1": {
       "rfNode": {
         "position": {
@@ -22,26 +8,21 @@
         }
       }
     },
-    "+javascript#2": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": 769.0030328145353,
-          "y": 75
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
     "+value#1": {
       "contentWidth": 415,
       "rfNode": {
         "position": {
-          "x": -466,
-          "y": 333
+          "x": -441,
+          "y": 336.03985794353
+        }
+      }
+    },
+    "+value#2": {
+      "contentWidth": 415,
+      "rfNode": {
+        "position": {
+          "x": -441,
+          "y": 49.1197509765625
         }
       }
     }

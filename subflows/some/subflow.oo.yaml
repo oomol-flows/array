@@ -1,0 +1,164 @@
+inputs_def:
+  - handle: array
+    json_schema:
+      type: array
+      items:
+        {}
+    value:
+      []
+outputs_def:
+  - handle: some
+    json_schema:
+      type: boolean
+nodes:
+  - node_id: +slot#1
+    title: "Predicate"
+    inputs_from:
+      - handle: item
+        from_node:
+          - node_id: each#2
+            output_handle: item
+      - handle: index
+        from_node:
+          - node_id: each#2
+            output_handle: index
+    slot:
+      inputs_def:
+        - handle: item
+          json_schema:
+            {}
+        - handle: index
+          json_schema:
+            type: integer
+      outputs_def:
+        - handle: predicate
+          json_schema:
+            type: boolean
+  - node_id: each#1
+    title: "Reducer Init"
+    inputs_from:
+      - handle: array
+        value:
+          - false
+        schema_overrides:
+          - path: 0
+            schema:
+              type: boolean
+    task: self::each
+  - node_id: each#2
+    title: "Each #2"
+    inputs_from:
+      - handle: array
+        from_flow:
+          []
+        from_node:
+          - node_id: switch-by-length#1
+            output_handle: ">0"
+    task: self::each
+  - node_id: +javascript#5
+    title: "Reducer"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: reducer
+          json_schema:
+            type: boolean
+        - handle: predicate
+          json_schema:
+            type: boolean
+          nullable: false
+        - handle: index
+          json_schema:
+            type: integer
+          nullable: false
+          description: Item index.
+        - handle: length
+          json_schema:
+            type: integer
+          nullable: false
+          description: Array length.
+      outputs_def:
+        - handle: reducer
+          json_schema:
+            type: boolean
+        - handle: some
+          json_schema:
+            type: boolean
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#2.js
+    inputs_from:
+      - handle: reducer
+        from_node:
+          - node_id: each#1
+            output_handle: item
+          - node_id: +javascript#5
+            output_handle: reducer
+      - handle: predicate
+        from_node:
+          - node_id: +slot#1
+            output_handle: predicate
+      - handle: index
+        from_node:
+          - node_id: each#2
+            output_handle: index
+      - handle: length
+        from_node:
+          - node_id: each#2
+            output_handle: length
+  - node_id: switch-by-length#1
+    title: "SwitchByLength #1"
+    inputs_from:
+      - handle: array
+        value:
+          - null
+        from_flow:
+          - input_handle: array
+    task: self::switch-by-length
+    outputs_def:
+      - handle: ">0"
+        json_schema:
+          type: array
+      - handle: "0"
+        json_schema:
+          type: array
+  - node_id: +javascript#6
+    title: "ToFalse"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: input
+          json_schema:
+            {}
+      outputs_def:
+        - handle: "false"
+          json_schema:
+            type: boolean
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#3.js
+    inputs_from:
+      - handle: input
+        schema_overrides:
+          - schema:
+              type: "null"
+        value:
+        from_node:
+          - node_id: switch-by-length#1
+            output_handle: "0"
+title: Some
+outputs_from:
+  - handle: some
+    from_flow:
+      []
+    from_node:
+      - node_id: +javascript#5
+        output_handle: some
+      - node_id: +javascript#6
+        output_handle: "false"

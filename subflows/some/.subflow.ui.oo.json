@@ -1,0 +1,83 @@
+{
+  "nodes": {
+    "+slot#1": {
+      "contentWidth": 350,
+      "rfNode": {
+        "position": {
+          "x": 613.5848194643033,
+          "y": -133.70957473520792
+        }
+      }
+    },
+    "each#1": {
+      "rfNode": {
+        "position": {
+          "x": 1032.043545226076,
+          "y": -302.0159405290585
+        }
+      }
+    },
+    "each#2": {
+      "rfNode": {
+        "position": {
+          "x": 64.36422173787082,
+          "y": -108.44162836442769
+        }
+      }
+    },
+    "+javascript#5": {
+      "contentWidth": 726.9518611495844,
+      "rfNode": {
+        "position": {
+          "x": 1099.152792876675,
+          "y": 127.29042526479208
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "switch-by-length#1": {
+      "rfNode": {
+        "position": {
+          "x": -493.52980510637406,
+          "y": 359.1028573029129
+        }
+      }
+    },
+    "+javascript#6": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 378.991409606003,
+          "y": 476.77610102902725
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": -1112.6503801585725,
+          "y": 398.6060205512088
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 2008.1272287196925,
+          "y": 526.3145555057373
+        }
+      }
+    }
+  }
+}

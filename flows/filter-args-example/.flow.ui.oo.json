@@ -1,24 +1,10 @@
 {
   "nodes": {
-    "+javascript#1": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": -452,
-          "y": -173
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
     "filter#1": {
       "rfNode": {
         "position": {
-          "x": 85,
-          "y": -173
+          "x": 768.8144874463517,
+          "y": -154.51852736631483
         }
       },
       "sections": {
@@ -27,26 +13,21 @@
         }
       }
     },
-    "+javascript#2": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": 571,
-          "y": -173
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
     "+value#2": {
       "contentWidth": 415,
       "rfNode": {
         "position": {
-          "x": -452,
-          "y": 149.01183069639418
+          "x": 231.81448744635168,
+          "y": 167.49330333007936
+        }
+      }
+    },
+    "+value#5": {
+      "contentWidth": 415,
+      "rfNode": {
+        "position": {
+          "x": 231.81448744635168,
+          "y": -258.5185273663148
         }
       }
     }

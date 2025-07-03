@@ -9,7 +9,7 @@ outputs_def:
 nodes:
   - node_id: +slot#1
     node_type: slot_node
-    title: "Filter Item #1"
+    title: "Predicate"
     inputs_from:
       - handle: item
         from_node:
@@ -134,11 +134,32 @@ nodes:
     inputs_from:
       - handle: array
         from_flow:
-          - input_handle: array
+          []
+        from_node:
+          - node_id: switch-by-length#1
+            output_handle: ">0"
     task: self::each
+  - node_id: switch-by-length#1
+    title: "SwitchByLength #1"
+    inputs_from:
+      - handle: array
+        value:
+          - null
+        from_flow:
+          - input_handle: array
+    task: self::switch-by-length
+    outputs_def:
+      - handle: ">0"
+        json_schema:
+          type: array
+      - handle: "0"
+        json_schema:
+          type: array
 title: Filter
 outputs_from:
   - handle: array
     from_node:
       - node_id: +javascript#6
         output_handle: array
+      - node_id: switch-by-length#1
+        output_handle: "0"

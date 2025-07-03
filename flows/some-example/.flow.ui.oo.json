@@ -1,0 +1,32 @@
+{
+  "nodes": {
+    "some#1": {
+      "rfNode": {
+        "position": {
+          "x": 1058,
+          "y": 307
+        }
+      }
+    },
+    "+value#1": {
+      "contentWidth": 415,
+      "rfNode": {
+        "position": {
+          "x": 419,
+          "y": 324
+        }
+      },
+      "sections": {
+        "value": {
+          "collapsed": {
+            "array": {
+              "[0]": true,
+              "[1]": true,
+              "[2]": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

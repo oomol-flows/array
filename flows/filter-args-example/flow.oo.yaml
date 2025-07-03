@@ -1,37 +1,12 @@
 nodes:
-  - node_id: +javascript#1
-    node_type: task_node
-    title: "Array Data"
-    icon: ":skill-icons:javascript:"
-    inputs_from:
-      - handle: input
-        value: ""
-    task:
-      ui:
-        default_width: 450
-      inputs_def:
-        - handle: input
-          description: Input
-          json_schema:
-            type: string
-      outputs_def:
-        - handle: output
-          description: Output
-          json_schema:
-            type: array
-      executor:
-        name: nodejs
-        options:
-          entry: scriptlets/+javascript#1.js
-          spawn: false
   - subflow: self::filter
     title: "Filter #1"
     node_id: filter#1
     inputs_from:
       - handle: array
         from_node:
-          - node_id: +javascript#1
-            output_handle: output
+          - node_id: +value#5
+            output_handle: array
     slots:
       - slot_node_id: +slot#1
         slotflow: self::+slotflow#1
@@ -51,33 +26,6 @@ nodes:
             from_node:
               - node_id: +value#2
                 output_handle: max
-  - node_id: +javascript#2
-    node_type: task_node
-    title: "output #1"
-    icon: ":skill-icons:javascript:"
-    inputs_from:
-      - handle: input
-        from_node:
-          - node_id: filter#1
-            output_handle: array
-    task:
-      ui:
-        default_width: 450
-      inputs_def:
-        - handle: input
-          description: Input
-          json_schema:
-            type: array
-      outputs_def:
-        - handle: output
-          description: Output
-          json_schema:
-            type: array
-      executor:
-        name: nodejs
-        options:
-          entry: scriptlets/+javascript#2.js
-          spawn: false
   - node_id: +value#2
     title: "Value #1"
     values:
@@ -89,4 +37,22 @@ nodes:
         json_schema:
           type: number
         value: 5
+  - node_id: +value#5
+    title: "Value #5"
+    values:
+      - handle: array
+        json_schema:
+          type: array
+          items:
+            type: number
+        value:
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
 title: Filter With Payload Example

@@ -8,31 +8,12 @@
         }
       }
     },
-    "+javascript#1": {
-      "contentWidth": 450,
+    "+value#1": {
+      "contentWidth": 415,
       "rfNode": {
         "position": {
-          "x": 46.60055422371076,
-          "y": -227.68897395947818
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
-        }
-      }
-    },
-    "+javascript#2": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": 1106.9889737532249,
-          "y": -227.68897395947818
-        }
-      },
-      "sections": {
-        "scriptlet": {
-          "cardCollapsed": true
+          "x": 128,
+          "y": -198.55780029296875
         }
       }
     }

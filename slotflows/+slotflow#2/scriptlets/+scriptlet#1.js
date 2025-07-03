@@ -19,5 +19,5 @@ export default async function (params, context) {
 
     // your code
 
-    return { output: params.input >= 2 };
+    return { output: params.item >= 2 };
 }

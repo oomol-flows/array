@@ -1,0 +1,18 @@
+executor:
+  name: nodejs
+  options:
+    entry: main.js
+inputs_def:
+  - handle: array
+    json_schema:
+      type: array
+    value:
+      []
+outputs_def:
+  []
+title: SwitchByLength
+additional_outputs: true
+additional_outputs_def:
+  - handle: ">1"
+    json_schema:
+      type: array

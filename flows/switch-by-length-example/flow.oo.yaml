@@ -1,0 +1,42 @@
+title: SwitchByLength Example
+nodes:
+  - node_id: switch-by-length#1
+    title: "SwitchByLength #1"
+    inputs_from:
+      - handle: array
+        value:
+          - null
+        from_node:
+          - node_id: +value#1
+            output_handle: array
+    task: self::switch-by-length
+    outputs_def:
+      - handle: =1
+        json_schema:
+          type: array
+      - handle: =3
+        json_schema:
+          type: array
+        nullable: false
+      - handle: "3"
+        json_schema:
+          type: array
+        nullable: false
+      - handle: ">1"
+        json_schema:
+          type: array
+      - handle: <6
+        json_schema:
+          type: array
+  - node_id: +value#1
+    title: "Value #1"
+    values:
+      - handle: array
+        json_schema:
+          type: array
+          items:
+            type: string
+        value:
+          - a
+          - b
+          - c

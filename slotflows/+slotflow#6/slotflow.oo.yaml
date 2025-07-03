@@ -1,0 +1,30 @@
+nodes:
+  - node_id: +javascript#1
+    title: "Has Animal"
+    icon: ":skill-icons:javascript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: item
+          json_schema:
+            {}
+          nullable: false
+      outputs_def:
+        - handle: predicate
+          json_schema:
+            type: boolean
+          nullable: false
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.js
+    inputs_from:
+      - handle: item
+        from_flow:
+          - input_handle: item
+outputs_from:
+  - handle: predicate
+    from_node:
+      - node_id: +javascript#1
+        output_handle: predicate

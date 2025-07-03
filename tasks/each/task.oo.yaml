@@ -21,4 +21,4 @@ outputs_def:
     description: Array length.
 title: Each
 additional_inputs: false
-description: ""
+description: Output each item in the input array.
