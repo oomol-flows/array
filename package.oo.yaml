@@ -1,4 +1,4 @@
-version: 0.1.1
+version: 0.1.2
 scripts:
   bootstrap: |
     npm install
@@ -9,3 +9,4 @@ description: Util Nodes for handling Array data.
 displayName: Array
 repository: https://github.com/oomol-flows/array
 icon: ./icon.png
+releaseNotes: add layer
