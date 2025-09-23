@@ -1,0 +1,21 @@
+{
+  "each-description": "依次输出输入数组中的每一项。",
+  "each": "逐项输出",
+  "predicate": "判定",
+  "every": "全部满足",
+  "key": "当输入数组中的所有项都通过判定子流，输出该数组，否则不输出。",
+  "filter": "过滤",
+  "predicate1": "判定",
+  "map": "映射",
+  "map-description": "对输入数组中的每个元素应用转换子流，并将结果组成新数组输出。",
+  "filter-description": "输出一个新数组，包含所有通过判定子流的项。",
+  "map-transform": "转换",
+  "map-transform-description": "将输入项转换其它内容并输出",
+  "predicate-description": "当输出 true 时代表此项通过，输出 false 时代表此项不通过。",
+  "some": "部分满足",
+  "some-description": "当输入数组中有任意项通过判定子流，输出该数组，否则不输出。",
+  "switchbylength": "长度匹配",
+  "switch-by-length": "每个输出接口的名字为表达式，当输入数组的长度满足表达式时，该接口输出原数组，否则不输出。",
+  "array": "数组",
+  "package-description": "用于处理数组数据的功能节点。"
+}

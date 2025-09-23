@@ -19,6 +19,6 @@ outputs_def:
     json_schema:
       type: integer
     description: Array length.
-title: Each
+title: "%each%"
 additional_inputs: false
-description: Output each item in the input array.
+description: "%each-description%"

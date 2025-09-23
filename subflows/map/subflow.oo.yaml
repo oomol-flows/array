@@ -21,7 +21,7 @@ nodes:
         - handle: item
           json_schema:
             {}
-    title: Map Item
+    title: "%map-transform%"
     node_id: +slot#2
     inputs_from:
       - handle: item
@@ -32,6 +32,7 @@ nodes:
         from_node:
           - node_id: each#1
             output_handle: index
+    description: "%map-transform-description%"
   - task:
       ui:
         default_width: 450
@@ -160,4 +161,5 @@ outputs_from:
         output_handle: array
       - node_id: switch-by-length#1
         output_handle: "0"
-title: Map
+title: "%map%"
+description: "%map-description%"

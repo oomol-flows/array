@@ -8,7 +8,7 @@ outputs_def:
       {}
 nodes:
   - node_id: +slot#1
-    title: Predicate
+    title: "%predicate%"
     inputs_from:
       - handle: item
         from_node:
@@ -30,6 +30,7 @@ nodes:
         - handle: predicate
           json_schema:
             type: boolean
+    description: "%predicate-description%"
   - node_id: each#1
     title: Reducer Init
     inputs_from:
@@ -145,7 +146,7 @@ nodes:
         from_node:
           - node_id: switch-by-length#1
             output_handle: "0"
-title: Every
+title: "%every%"
 outputs_from:
   - handle: output
     from_node:
@@ -153,3 +154,4 @@ outputs_from:
         output_handle: some
       - node_id: +javascript#2
         output_handle: "true"
+description: "%key%"

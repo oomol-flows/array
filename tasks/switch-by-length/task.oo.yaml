@@ -10,9 +10,10 @@ inputs_def:
       []
 outputs_def:
   []
-title: SwitchByLength
+title: "%switchbylength%"
 additional_outputs: true
 additional_outputs_def:
   - handle: ">1"
     json_schema:
       type: array
+description: "%switch-by-length%"

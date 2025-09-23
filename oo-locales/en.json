@@ -1,0 +1,21 @@
+{
+  "each-description": "Output each item in the input array.",
+  "each": "Each",
+  "predicate": "Predicate",
+  "every": "Every",
+  "key": "If all items in the input array pass the predicate subflow, the array is output; otherwise, it is not output.",
+  "filter": "Filter",
+  "predicate1": "Predicate",
+  "map": "Map",
+  "map-description": "Outputs a new array with the results of applying a transform subflow to each element.",
+  "filter-description": "Outputs a new array with all elements that pass the predicate subflow.",
+  "map-transform": "Transform",
+  "map-transform-description": "Convert the input into other content and output it.",
+  "predicate-description": "When the output is true, it means the item passes; when the output is false, it means the item does not pass.",
+  "some": "Some",
+  "some-description": "If any item in the input array passes the predicate subflow, the array is output; otherwise, it is not output.",
+  "switchbylength": "Length Match",
+  "switch-by-length": "The name of each output handle is an expression. When the length of the input array satisfies the expression, that interface outputs the original array; otherwise, it does not output anything.",
+  "array": "Array",
+  "package-description": "Util Nodes for handling Array data."
+}
