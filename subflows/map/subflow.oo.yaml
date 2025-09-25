@@ -1,11 +1,13 @@
 inputs_def:
   - handle: array
+    description: "%array%"
     json_schema:
       type: array
       items:
         {}
 outputs_def:
   - handle: array
+    description: "%mapped-array%"
     json_schema:
       type: array
 nodes:

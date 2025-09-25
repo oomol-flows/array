@@ -1,5 +1,6 @@
 inputs_def:
   - handle: array
+    description: "%array%"
     json_schema:
       type: array
       items:
@@ -7,7 +8,8 @@ inputs_def:
     value:
       []
 outputs_def:
-  - handle: some
+  - handle: anyPassed
+    description: "%any-passed%"
     json_schema:
       type: boolean
 nodes:
@@ -155,7 +157,7 @@ nodes:
             output_handle: "0"
 title: "%some%"
 outputs_from:
-  - handle: some
+  - handle: anyPassed
     from_flow:
       []
     from_node:

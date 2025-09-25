@@ -4,6 +4,7 @@ executor:
     entry: main.js
 inputs_def:
   - handle: array
+    description: "%array%"
     json_schema:
       type: array
     value:

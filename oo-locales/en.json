@@ -16,6 +16,13 @@
   "some-description": "If any item in the input array passes the predicate subflow, the array is output; otherwise, it is not output.",
   "switchbylength": "Length Match",
   "switch-by-length": "The name of each output handle is an expression. When the length of the input array satisfies the expression, that interface outputs the original array; otherwise, it does not output anything.",
-  "array": "Array",
-  "package-description": "Util Nodes for handling Array data."
+  "array": "An array.",
+  "package-description": "Util Nodes for handling Array data.",
+  "each-array-item": "Each array item.",
+  "item-index": "Item index.",
+  "array-length": "Array length.",
+  "all-passed": "Whether all items passed the predicate subflow.",
+  "filltered-array": "A new Array with items passed the predicate subflow.",
+  "mapped-array": "A new array of items mapped by the transform subflow.",
+  "any-passed": "Whether any item passed the predicate subflow."
 }

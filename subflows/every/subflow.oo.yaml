@@ -1,11 +1,13 @@
 inputs_def:
-  - handle: input
+  - handle: array
+    description: "%array%"
     json_schema:
-      {}
+      type: array
 outputs_def:
-  - handle: output
+  - handle: allPassed
+    description: "%all-passed%"
     json_schema:
-      {}
+      type: boolean
 nodes:
   - node_id: +slot#1
     title: "%predicate%"
@@ -114,7 +116,7 @@ nodes:
         value:
           - null
         from_flow:
-          - input_handle: input
+          - input_handle: array
     task: self::switch-by-length
     outputs_def:
       - handle: ">0"
@@ -148,7 +150,7 @@ nodes:
             output_handle: "0"
 title: "%every%"
 outputs_from:
-  - handle: output
+  - handle: allPassed
     from_node:
       - node_id: +javascript#1
         output_handle: some

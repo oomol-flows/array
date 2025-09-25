@@ -16,6 +16,13 @@
   "some-description": "当输入数组中有任意项通过判定子流，输出该数组，否则不输出。",
   "switchbylength": "长度匹配",
   "switch-by-length": "每个输出接口的名字为表达式，当输入数组的长度满足表达式时，该接口输出原数组，否则不输出。",
-  "array": "数组",
-  "package-description": "用于处理数组数据的功能节点。"
+  "array": "一个数组。",
+  "package-description": "用于处理数组数据的功能节点。",
+  "each-array-item": "每一个数组项。",
+  "item-index": "数组项索引。",
+  "array-length": "数组长度。",
+  "all-passed": "是否所有数组项都通过了判定子流。",
+  "filltered-array": "一个新数组，包含所有通过了判定子流的项。",
+  "mapped-array": "一个新数组，包含所有通过转换子流映射的项。",
+  "any-passed": "是否存在数组项通过了判定子流。"
 }

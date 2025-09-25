@@ -1,9 +1,11 @@
 inputs_def:
   - handle: array
+    description: "%array%"
     json_schema:
       type: array
 outputs_def:
   - handle: array
+    description: "%filltered-array%"
     json_schema:
       type: array
 nodes:
