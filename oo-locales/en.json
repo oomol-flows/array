@@ -17,6 +17,7 @@
   "switchbylength": "Length Match",
   "switch-by-length": "The name of each output handle is an expression. When the length of the input array satisfies the expression, that interface outputs the original array; otherwise, it does not output anything.",
   "array": "An array.",
+  "display-name": "Array",
   "package-description": "Util Nodes for handling Array data.",
   "each-array-item": "Each array item.",
   "item-index": "Item index.",

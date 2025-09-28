@@ -1,4 +1,4 @@
-version: 0.1.4
+version: 0.1.5
 scripts:
   bootstrap: |
     npm install
@@ -6,6 +6,6 @@ dependencies:
   {}
 name: array
 description: "%package-description%"
-displayName: "%array%"
+displayName: "%display-name%"
 repository: https://github.com/oomol-flows/array
 icon: ./icon.png

@@ -17,6 +17,7 @@
   "switchbylength": "长度匹配",
   "switch-by-length": "每个输出接口的名字为表达式，当输入数组的长度满足表达式时，该接口输出原数组，否则不输出。",
   "array": "一个数组。",
+  "display-name": "数组",
   "package-description": "用于处理数组数据的功能节点。",
   "each-array-item": "每一个数组项。",
   "item-index": "数组项索引。",
